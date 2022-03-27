@@ -1,24 +1,13 @@
-# admin-psexpress-com-tn
+# admin.psexpress.com.tn
 
-## Project setup
-```
-yarn install
-```
+```contact developer : chawki 55385474
 
-### Compiles and hot-reloads for development
-```
-yarn serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+```date: 28-march-2022
+
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+### admin site
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [https://admin.psexpress.com.tn/](https://admin.psexpress.com.tn/).
