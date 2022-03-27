@@ -1,0 +1,5 @@
+vue create myapp // [vue2]
+vue add vuetify  // that's it
+
+
+serve -S dist  // run production server locally
