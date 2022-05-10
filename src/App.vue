@@ -1,27 +1,33 @@
 <template>
-  <v-app>
-    <Navbar />
-    <v-main>
-      <HelloWorld />
-    </v-main>
+  <v-app id="#app">
+    <router-link to="/" style="text-decoration: none" class="black--text">
+    </router-link>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import HelloWorld from "./components/HelloWorld";
-import About from "./pages/About.vue";
-import Home from "./pages/Home.vue";
+import { mapGetters, mapActions } from "vuex";
+import Login from "@/pages/auth/Login.vue";
 
 export default {
   name: "App",
-
   components: {
-    HelloWorld,
+    Login,
   },
-
-  data: () => ({
-    //
-  }),
+  computed: {
+    ...mapGetters(["getIsAuthenticated"]),
+  },
 };
 </script>
+
+<style lang="scss">
+#app {
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2c3e50;
+  overflow-x: hidden;
+}
+</style>

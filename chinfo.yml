@@ -1,5 +1,7 @@
 vue create myapp // [vue2]
 vue add vuetify  // that's it
 
+vue add router
+yarn serve // dev mode
 
 serve -S dist  // run production server locally
