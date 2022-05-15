@@ -4,7 +4,7 @@
       <v-btn color="secondary" text> Gestion des produits</v-btn>
       <v-btn color="primary" @click="handleCreateDialog"> create</v-btn>
     </div>
-    <v-snackbar
+    <!-- <v-snackbar
       :timeout="-1"
       :value="true"
       absolute
@@ -14,7 +14,7 @@
       right
     >
       snackbar with <strong>outlined</strong> property.
-    </v-snackbar>
+    </v-snackbar> -->
     <v-simple-table fixed-header height="1000px">
       <template v-slot:default>
         <thead>

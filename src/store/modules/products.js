@@ -33,10 +33,10 @@ const actions = {
       const response = await axios.get(url);
       console.log(response.data.products);
 
-      commit("setSnackbarSuccess", true);
-      commit("setSnackbarSuccessText", "data received");
-      // commit("setLoading", false);
+      // commit("setSnackbarSuccess", true);
+      // commit("setSnackbarSuccessText", "data received");
       commit("setProducts", response.data.products);
+      commit("setLoading", false);
     } catch (err) {
       console.log(err);
     }
