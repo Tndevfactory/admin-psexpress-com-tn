@@ -31,7 +31,7 @@ const actions = {
 
     try {
       const response = await axios.get(url);
-      console.log(response.data.products);
+      //console.log(response.data.products);
 
       // commit("setSnackbarSuccess", true);
       // commit("setSnackbarSuccessText", "data received");
@@ -62,6 +62,57 @@ const actions = {
       console.log(response);
       commit("setSnackbarSuccess", true);
       commit("setSnackbarSuccessText", "product created");
+    } catch (err) {
+      console.log(err);
+    }
+    setTimeout(() => {
+      commit("setSnackbarError", false);
+      commit("setSnackbarSuccess", false);
+      commit("setSnackbarSuccessText", "");
+      commit("setSnackbarErrorText", "");
+      commit("setLoading", false);
+    }, 4000);
+  },
+  async updateProduct({ commit }, data) {
+    // const config = {
+    //   headers: { "Content-Type": "multipart/form-data" },
+    // };
+    commit("setLoading", true);
+
+    let url = `${process.env.VUE_APP_BASE_URL}/api-update-product`;
+
+    try {
+      const response = await axios.post(url, data);
+      console.log(response);
+      commit("setSnackbarSuccess", true);
+      commit("setSnackbarSuccessText", "product updated");
+      commit("setLoading", false);
+    } catch (err) {
+      console.log(err);
+    }
+    setTimeout(() => {
+      commit("setSnackbarError", false);
+      commit("setSnackbarSuccess", false);
+      commit("setSnackbarSuccessText", "");
+      commit("setSnackbarErrorText", "");
+      commit("setLoading", false);
+    }, 4000);
+  },
+
+  async deleteProduct({ commit }, data) {
+    // const config = {
+    //   headers: { "Content-Type": "multipart/form-data" },
+    // };
+    commit("setLoading", true);
+
+    let url = `${process.env.VUE_APP_BASE_URL}/api-delete-product`;
+
+    try {
+      const response = await axios.post(url, data);
+      console.log(response);
+      commit("setSnackbarSuccess", true);
+      commit("setSnackbarSuccessText", "product deleted");
+      commit("setLoading", false);
     } catch (err) {
       console.log(err);
     }
